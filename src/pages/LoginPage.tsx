@@ -22,19 +22,31 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className='container mx-auto '>
-      <h2>Connexion</h2>
-      {loginSuccess && <p>Connexion réussie ! Vous allez être redirigé vers la page d'accueil.</p>}
-      {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('email', { required: true })} placeholder="Email" />
-        {errors.email && <span>Ce champ est requis</span>}
-        <input {...register('password', { required: true })} type="password" placeholder="Mot de passe" />
-        {errors.password && <span>Ce champ est requis</span>}
-        <input type="submit" value="Se connecter" />
-      </form>
-      <Link to="/register">Pas encore de compte ? Inscrivez-vous</Link>
-      <a href="/reset_password">Mot de passe oublié ?</a>
+    <div className="container">
+      <div className="container my-5 text-center">
+        <h1 className="font-weight-extrabold">D & D MANAGER</h1>
+      </div>
+      <div className='container shadow-lg py-3 rounded flexbox bg-light border border-5 border-white'>
+        <h2 className="text-center text-secondary">Connexion</h2>
+        <div className="container flex-column d-flex justify-content-center align-items-center">
+          {loginSuccess && <p>Connexion réussie ! Vous allez être redirigé vers la page d'accueil.</p>}
+          {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+          <form className='form-group flex-column d-flex justify-content-center align-items-center' onSubmit={handleSubmit(onSubmit)}>
+            <label htmlFor="email">Login</label>
+            <input className=" p-1 mt-1 mb-3 px-2 rounded border none" {...register('email', { required: true })} placeholder="Email" />
+            {errors.email && <span>Ce champ est requis</span>}
+            <label htmlFor="password">Password</label>
+            <input className=" p-1 mt-1 mb-3 px-2 rounded border none" {...register('password', { required: true })} type="password" placeholder="Mot de passe" />
+            {errors.password && <span>Ce champ est requis</span>}
+            <input className="btn btn-dark shadow-md p-1 my-3 px-2 rounded border none" type="submit" value="Se connecter" />
+          </form>
+
+        </div>
+        <div className="container flex-column d-flex justify-content-center align-items-center">
+        <Link className="m-2" to="/register">Pas encore de compte ? Inscrivez-vous</Link>
+        <a className="m-2" href="/reset_password">Mot de passe oublié ?</a>
+        </div>
+      </div>
     </div>
   );
 };
