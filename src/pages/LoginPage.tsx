@@ -20,7 +20,7 @@ const LoginPage: React.FC = () => {
       setLoginError(error instanceof Error ? error.message : 'Une erreur est survenue lors de la connexion.');
     }
   };
-  
+
   return (
     <div className='container mx-auto '>
       <h2>Connexion</h2>
