@@ -1,0 +1,5 @@
+# Ignorer les fichiers suivants
+.env
+node_modules
+db
+supabaseClient.jsx

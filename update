@@ -1,0 +1,7 @@
+rm -rf node_modules package-lock.json
+
+echo "Node-modules supprimé et Package-lock updaté"
+
+npm install inflight@latest glob@latest sourcemap-codec@latest
+
+echo "Versions dépréciées mise à jour"
