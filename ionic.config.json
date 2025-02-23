@@ -1,7 +1,0 @@
-{
-  "name": "dnd-manager",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
-}
